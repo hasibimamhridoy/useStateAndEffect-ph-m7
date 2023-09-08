@@ -10,6 +10,14 @@ function App() {
 
   const [books, setBooks] = useState([]);
 
+  /**
+   * Deeply use state
+   * get value using index
+   *///const myState = useState()
+  //const initialValue = myState[0]
+  //const setKoraFunction = myState[1]
+  
+
 
   /**
    * Infinite rendering issue if we do not use useEffect
@@ -17,6 +25,8 @@ function App() {
   // fetch("products.json")
   //     .then((res) => res.json())
   //     .then((books) => setBooks(books));
+
+
 
   useEffect(() => {
     console.log(
@@ -26,7 +36,7 @@ function App() {
     fetch("products.json")
       .then((res) => res.json())
       .then((books) => setBooks(books));
-  }, []);
+  }, [dependency]);
 
   console.log(books);
 
